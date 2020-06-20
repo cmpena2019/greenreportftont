@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from '../Servicios/login.service';
-import { Login } from '../models/login';
-import {StorageService} from '../Servicios/storage.service'
+import { LoginService } from '../../Servicios/login.service';
+import { Login } from '../../models/login';
+import {StorageService} from '../../Servicios/storage.service'
 
 @Component({
   selector: 'app-login',
@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
       this.api.login(login).subscribe(
           user =>  {
               this.storage.create('_user',user);
-              this.router.navigate([this.returnUrl]);
           }, ({error}) => { 
               if (error){
                 this.hasError = true;

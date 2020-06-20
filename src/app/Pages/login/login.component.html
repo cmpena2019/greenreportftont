@@ -11,7 +11,7 @@
                                     <img src="../../assets/Logo.jpeg" class="imagen">
                                     <h1 class="h4 text-gray-900 mb-4" style="font-weight: bold;">Bienvenido!</h1>
                                 </div>
-                                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                                     <div class="input-container">
                                         <i class="fa fa-user icon"></i>
                                         <input type="text" formControlName="username" class="inputext form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Ingrese su Usario" />
@@ -26,7 +26,7 @@
                                             <div *ngIf="f.password.errors.required">Contraseña es requerida</div>
                                         </div>
                                     </div>
-                                    <button [disabled]="!loginForm.valid" class="btn btn-success boton">
+                                    <button [disabled]="!loginForm.valid" class="btn btn-success boton" onclick="login()">
                   Iniciar Sesión
                 </button>
                                 </form>

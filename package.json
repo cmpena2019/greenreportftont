@@ -45,5 +45,17 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.1"
-  }
+  },
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicoaval/greenreportftont.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicoaval/greenreportftont/issues"
+  },
+  "homepage": "https://github.com/nicoaval/greenreportftont#readme",
+  "description": ""
 }

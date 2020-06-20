@@ -1,176 +1,166 @@
 <header class="header-sesion">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand">
-        <img src="../../assets/Logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">Green
-        Report Web
-      </a>
-    </nav>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">
+                <img src="../../assets/Logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">Green Report Web
+            </a>
+        </nav>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Personal
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Informacion Perfil</a>
-            <a class="dropdown-item">Personal</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item">Informacion Perfil</a>
+                        <a class="dropdown-item">Personal</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Registro Recuperación
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Registro</a>
-            <a class="dropdown-item">Registro Auditoria</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item">Registro</a>
+                        <a class="dropdown-item">Registro Auditoria</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Materiales
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Materiales</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item">Materiales</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Reportes
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item">Proceso Recuperación</a>
-            <a class="dropdown-item">Auditoria Recuperación</a>
-          </div>
-        </li>
-      </ul>
-      <div class="form-inline my-2 my-lg-0">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link">Usuario: Admin</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link">Cerrar sesión</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item">Proceso Recuperación</a>
+                        <a class="dropdown-item">Auditoria Recuperación</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link">Usuario: Admin</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 <div style="margin:50px; ">
-  <div class="row justify-content-center"
-    style="background-color: #333333; color: white; font-size: small; border-radius: 10px;">
-    <div class="col-6"
-      style="text-align: center; border-style: solid; border-color: transparent #ffff transparent transparent;"
-      (click)="mostrar('L')">
-      <label style="padding: 5px;">Lista de personal</label>
+    <div class="row justify-content-center" style="background-color: #333333; color: white; font-size: small; border-radius: 10px;">
+        <div class="col-6" style="text-align: center; border-style: solid; border-color: transparent #ffff transparent transparent;" (click)="mostrar('L')">
+            <label style="padding: 5px;">Lista de personal</label>
+        </div>
+        <div class="col-6" style="text-align: center; justify-self: center;" (click)="mostrar('N')">
+            <label style="padding: 8px;">Nuevo</label>
+        </div>
     </div>
-    <div class="col-6" style="text-align: center; justify-self: center;" (click)="mostrar('N')">
-      <label style="padding: 8px;">Nuevo</label>
-    </div>
-  </div>
-  <div class="row justify-content-center" *ngIf="mostrarNuevo">
-    <div class="col-12 padre">
-      <div class="cuadro">
-        <label> Crear nuevo</label>
-      </div>
-    </div>
-    <div class="col-12" style="margin-top: 10px;">
-      <div>
-        <input type="text" placeholder="Nombre" class="form-control input-tex">
-      </div>
-      <div style="margin-top: 10px;">
-        <input type="text" placeholder="Apellidos" class="form-control input-tex">
-      </div>
-      <div style="margin-top: 10px;">
-        <input type="email" placeholder="Correo" class="form-control input-tex">
-      </div>
-      <div style="margin-top: 10px;">
-        <select class="form-control input-tex">
+    <div class="row justify-content-center" *ngIf="mostrarNuevo">
+        <div class="col-12 padre">
+            <div class="cuadro">
+                <label> Crear nuevo</label>
+            </div>
+        </div>
+        <div class="col-12" style="margin-top: 10px;">
+            <div>
+                <input type="text" placeholder="Nombre" class="form-control input-tex">
+            </div>
+            <div style="margin-top: 10px;">
+                <input type="text" placeholder="Apellidos" class="form-control input-tex">
+            </div>
+            <div style="margin-top: 10px;">
+                <input type="email" placeholder="Correo" class="form-control input-tex">
+            </div>
+            <div style="margin-top: 10px;">
+                <select class="form-control input-tex">
           <option disabled selected>Estado</option>
           <option value="item 1">Item 1</option>
           <option value="item 2">Item 2</option>
           <option value="item 3">Item 3</option>
         </select>
-      </div>
-      <div style="margin-top: 10px;">
-        <select class="form-control input-tex">
+            </div>
+            <div style="margin-top: 10px;">
+                <select class="form-control input-tex">
           <option disabled selected>Cargo</option>
           <option value="item 1">Item 1</option>
           <option value="item 2">Item 2</option>
           <option value="item 3">Item 3</option>
         </select>
-      </div>
-      <div style="margin-top: 10px;">
-        <input type="password" placeholder="Contraseña" class="form-control input-tex">
-      </div>
-      <div style="margin-top: 10px;">
-        <select class="form-control input-tex">
+            </div>
+            <div style="margin-top: 10px;">
+                <input type="password" placeholder="Contraseña" class="form-control input-tex">
+            </div>
+            <div style="margin-top: 10px;">
+                <select class="form-control input-tex">
           <option disabled selected>Rol</option>
           <option value="item 1">Item 1</option>
           <option value="item 2">Item 2</option>
           <option value="item 3">Item 3</option>
         </select>
-      </div>
+            </div>
 
+        </div>
+        <div class="row justify-content-center" style="margin-top: 10px;">
+            <div class="col-6 ">
+                <button class="btn btn-danger">Cancelar</button>
+            </div>
+            <div class="col-6 ">
+                <button class="btn btn-success">Guardar</button>
+            </div>
+        </div>
     </div>
-    <div class="row justify-content-center" style="margin-top: 10px;">
-      <div class="col-6 ">
-        <button class="btn btn-danger">Cancelar</button>
-      </div>
-      <div class="col-6 ">
-        <button class="btn btn-success">Guardar</button>
-      </div>
+    <div class="row justify-content-center" *ngIf="mostrarLista">
+        <div class="col-12 padre">
+            <div class="cuadro">
+                <label> Consulta y filtra el personal de tu organización</label>
+            </div>
+        </div>
+        <div class="col-12" style="margin-top: 10px;">
+            <table class="table table-striped">
+                <thead>
+                    <tr style="text-align: center;">
+                        <th scope="col">#</th>
+                        <th scope="col" sortable="name">Nombre</th>
+                        <th scope="col" sortable="population">Correo</th>
+                        <th scope="col" sortable="population">Estado</th>
+                        <th scope="col" sortable="population">Cargo</th>
+                        <th scope="col" sortable="population">Rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>
+                            Cristian Camilo
+                        </td>
+                        <td>
+                            ccbr_31@hotmail.com
+                        </td>
+                        <td>
+                            Activo
+                        </td>
+                        <td>
+                            Desarrollador Full Stack (Angular/NodeJs)
+                        </td>
+                        <td>
+                            Estudiante
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-  <div class="row justify-content-center" *ngIf="mostrarLista">
-    <div class="col-12 padre">
-      <div class="cuadro">
-        <label> Consulta y filtra el personal de tu organización</label>
-      </div>
-    </div>
-    <div class="col-12" style="margin-top: 10px;">
-
-      <table class="table table-striped">
-        <thead>
-          <tr style="text-align: center;">
-            <th scope="col">#</th>
-            <th scope="col" sortable="name">Nombre</th>
-            <th scope="col" sortable="area">Apellido</th>
-            <th scope="col" sortable="population">Correo</th>
-            <th scope="col" sortable="population">Estado</th>
-            <th scope="col" sortable="population">Cargo</th>
-            <th scope="col" sortable="population">Rol</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>
-              Claudia Milena
-            </td>
-            <td>
-              Peña Sosa
-            </td>
-            <td>
-              cmpena@unbosque.edu.co
-            </td>
-            <td>
-              Virgen
-            </td>
-            <td>
-              Ninguno
-            </td>
-            <td>
-              Estudiante
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 </div>
