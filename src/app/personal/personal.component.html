@@ -49,7 +49,7 @@
             <div class="form-inline my-2 my-lg-0">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" [routerLink]="['/InformacionPerfil']">Usuario: Admin</a>
+                        <a class="nav-link" [routerLink]="['/InformacionPerfil']">Usuario: {{ user?.correo }}</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" [routerLink]="['']">Cerrar sesión</a>
@@ -68,51 +68,64 @@
             <label style="padding: 8px;">Nuevo</label>
         </div>
     </div>
-    <div class="row justify-content-center" *ngIf="mostrarNuevo">
-        <div class="col-12 padre">
-            <div class="cuadro">
-                <label> Crear nuevo</label>
+
+    <form [formGroup]="personalForm" (ngSubmit)="Personal()">
+        <div class="row justify-content-center" *ngIf="mostrarNuevo">
+            <div class="col-12 padre">
+                <div class="cuadro">
+                    <label> Crear nuevo</label>
+                </div>
             </div>
+            <div class="col-12" style="margin-top: 10px;">
+                <div>
+                    <input type="number" placeholder="id" formControlName="idPersonal" class="form-control input-tex" [ngClass]="{'valid': f.idPersonal.value}">
+                    <div *ngIf="f.idPersonal.errors && f.idPersonal.touched">
+                        <small *ngIf="f.idPersonal.errors?.required" class="required">Id del personal es requerido</small>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" placeholder="Nombre" formControlName="nombre" class="form-control input-tex">
+                    <div *ngIf="f.nombre.errors && f.nombre.touched">
+                        <small *ngIf="f.nombre.errors?.required" class="required">Id del personal es requerido</small>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <input type="email" placeholder="Correo" formControlName="correo" class="form-control input-tex">
+                </div>
+                <div style="margin-top: 10px;">
+                    <select class="form-control input-tex" formControlName="estado">
+                        <option disabled selected >Estado</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div style="margin-top: 10px;">
+                    <select class="form-control input-tex" formControlName="idCargo">
+                        <option disabled selected>Cargo</option>
+                        <option value="1">Funcionario</option>
+                        <option value="2">Funcionario Planta</option>
+                        <option value="3">Administrador</option>
+                        <option value="4">Gerente</option>
+                    </select>
+                </div>
+                <div style="margin-top: 10px;">
+                    <input type="password" placeholder="Contraseña" class="form-control input-tex" formControlName="idContraseña">
+                </div>
+                <div style="margin-top: 10px;">
+                    <input type="text" placeholder="Rol" class="form-control input-tex" formControlName="Descripcion">
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-top: 10px;">
+                <div class="col-6 ">
+                    <button class="btn btn-danger">Cancelar</button>
+                </div>
+                <div class="col-6 ">
+                    <button class="btn btn-success">Guardar</button>
+                </div>
+            </div>
+
         </div>
-        <div class="col-12" style="margin-top: 10px;">
-            <div>
-                <input type="text" placeholder="Nombre" class="form-control input-tex">
-            </div>
-            <div style="margin-top: 10px;">
-                <input type="email" placeholder="Correo" class="form-control input-tex">
-            </div>
-            <div style="margin-top: 10px;">
-                <select class="form-control input-tex">
-          <option disabled selected>Estado</option>
-          <option value="item 1">Activo</option>
-          <option value="item 2">Inactivo</option>
-        </select>
-            </div>
-            <div style="margin-top: 10px;">
-                <select class="form-control input-tex">
-          <option disabled selected>Cargo</option>
-          <option value="item 1">Funcionario</option>
-          <option value="item 2">Funcionario Planta</option>
-          <option value="item 3">Administrador</option>
-          <option value="item 3">Gerente</option>
-        </select>
-            </div>
-            <div style="margin-top: 10px;">
-                <input type="password" placeholder="Contraseña" class="form-control input-tex">
-            </div>
-            <div style="margin-top: 10px;">
-                <input type="text" placeholder="Rol" class="form-control input-tex">
-            </div>
-        </div>
-        <div class="row justify-content-center" style="margin-top: 10px;">
-            <div class="col-6 ">
-                <button class="btn btn-danger">Cancelar</button>
-            </div>
-            <div class="col-6 ">
-                <button class="btn btn-success">Guardar</button>
-            </div>
-        </div>
-    </div>
+    </form>
     <div class="row justify-content-center" *ngIf="mostrarLista">
         <div class="col-12 padre">
             <div class="cuadro">
@@ -132,22 +145,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>1</th>
+                    <tr *ngFor="let persona of personas; let i = index">
+                        <th>{{ i +1 }}</th>
                         <td>
-                            Cristian Camilo
+                            {{ persona?.nombre }}
                         </td>
                         <td>
-                            ccbr_31@hotmail.com
+                            {{ persona?.Correo }}
                         </td>
                         <td>
-                            Activo
+                            {{ persona?.estado }}
                         </td>
                         <td>
-                            Desarrollador Full Stack (Angular/NodeJs)
+                            {{ persona?.Cargo }}
                         </td>
                         <td>
-                            Estudiante
+                            {{ persona?.Descripcion }}
                         </td>
                     </tr>
                 </tbody>
