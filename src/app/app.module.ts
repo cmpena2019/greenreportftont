@@ -10,6 +10,12 @@ import { LoginComponent } from './login';
 //import {LoginComponent} from './Pages/login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PersonalComponent } from './personal/personal.component';
+import { InformacionPerfilComponent } from './informacion-perfil/informacion-perfil.component';
+import { RegistroComponent } from './registro/registro.component';
+import { RegistroAuditoriaComponent } from './registro-auditoria/registro-auditoria.component';
+import { MaterialesComponent } from './materiales/materiales.component';
+import { ProcesoRecuperacionComponent } from './proceso-recuperacion/proceso-recuperacion.component';
+import { AuditoriaRecuperacionComponent } from './auditoria-recuperacion/auditoria-recuperacion.component';
 
 @NgModule({
     imports: [
@@ -23,7 +29,13 @@ import { PersonalComponent } from './personal/personal.component';
         HomeComponent,
         LoginComponent,
         InicioComponent,
-        PersonalComponent
+        PersonalComponent,
+        InformacionPerfilComponent,
+        RegistroComponent,
+        RegistroAuditoriaComponent,
+        MaterialesComponent,
+        ProcesoRecuperacionComponent,
+        AuditoriaRecuperacionComponent
     ],
     providers: [
     ],
