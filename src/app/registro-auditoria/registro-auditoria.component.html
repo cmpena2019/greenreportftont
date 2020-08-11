@@ -3,7 +3,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light" [routerLink]="['/home']">
             <a class="navbar-brand">
                 <img src="../../assets/Logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">Green Report Web
             </a>
@@ -49,7 +49,7 @@
             <div class="form-inline my-2 my-lg-0">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link">Usuario: Admin</a>
+                        <a class="nav-link" [routerLink]="['/InformacionPerfil']">Usuario: Admin</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" [routerLink]="['']">Cerrar sesión</a>
