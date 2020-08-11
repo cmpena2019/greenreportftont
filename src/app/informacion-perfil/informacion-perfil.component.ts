@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformacionPerfilComponent implements OnInit {
 
-  constructor() { }
+
+  public mostrarNuevo: boolean;
+  public mostrarLista: boolean;
+  constructor() {
+    this.mostrarNuevo = false;
+    this.mostrarLista = true;
+  }
 
   ngOnInit() {
+  }
+  mostrar(seleccionado: any) {
+    if (seleccionado === 'N') {
+      this.mostrarNuevo = true;
+      this.mostrarLista = false;
+    } else {
+      if (seleccionado === 'L') {
+        this.mostrarNuevo = false;
+        this.mostrarLista = true;
+      }
+    }
   }
 
 }

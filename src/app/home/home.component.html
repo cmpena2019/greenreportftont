@@ -1,54 +1,48 @@
 <header class="header-sesion">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand">
-                <img src="../../assets/Logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">Green
-                Report Web
+                <img src="../../assets/Logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">Green Report Web
             </a>
         </nav>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Personal
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item">Informacion Perfil</a>
+                        <a class="dropdown-item" [routerLink]="['/InformacionPerfil']">Informacion Perfil</a>
                         <a class="dropdown-item" [routerLink]="['/personal']">Personal</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Registro Recuperación
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item">Registro</a>
-                        <a class="dropdown-item">Registro Auditoria</a>
+                        <a class="dropdown-item" [routerLink]="['/Registro']">Registro</a>
+                        <a class="dropdown-item" [routerLink]="['/RegistroAuditoria']">Registro Auditoria</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Materiales
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item">Materiales</a>
+                        <a class="dropdown-item" [routerLink]="['/Materiales']">Materiales</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Reportes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item">Proceso Recuperación</a>
-                        <a class="dropdown-item">Auditoria Recuperación</a>
+                        <a class="dropdown-item" [routerLink]="['/ProcesoRecuperacion']">Proceso Recuperación</a>
+                        <a class="dropdown-item" [routerLink]="['/AuditoriaRecuperacion']">Auditoria Recuperación</a>
                     </div>
                 </li>
             </ul>
@@ -58,13 +52,32 @@
                         <a class="nav-link">Usuario: Admin</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link">Cerrar sesión</a>
+                        <a class="nav-link" [routerLink]="['']">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+<div class="fondo">
+    <div class="row align-items-center">
+        <img src="../../assets/Logo.jpeg" width="150" height="150">
+    </div>
+    <div class="row align-items-center">
+        <div class="col-12" style="text-align: center;">
+            <label> Aplicación para la gestión integral de residuos sólidos</label>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-12 padre">
+            <div class="cuadro">
+                <label> Registro de residuos sólidos aprovechables (plástico, papel, cartón), residuos sólidos perenes (Vidrios,
+            metales, ferrosos y no ferrosos) y visualización de indicadores generados a partir del proceso de
+            registro</label>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container-fluid">
     <router-outlet></router-outlet>
 </div>
