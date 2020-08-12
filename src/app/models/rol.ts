@@ -1,4 +1,4 @@
-export class Personal {
+export class rol {
     constructor(
     public nombre: string,
     public Correo: string,

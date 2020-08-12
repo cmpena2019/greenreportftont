@@ -12,6 +12,10 @@ export class AppComponent {
     logout() {
         this.router.navigate(['/login']);
         this.router.navigate(['/Personal']);
+        this.router.navigate(['/Usuario']);
+        this.router.navigate(['/Contrasenas']);
+        this.router.navigate(['/rol']);
+        this.router.navigate(['/permisos']);
 
     }
 }

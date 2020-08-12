@@ -36,13 +36,12 @@ export class PersonalComponent implements OnInit {
   ngOnInit() {
 
     this.personalForm = this.formBuilder.group({
-      idPersonal: ['', [Validators.required, Validators.minLength(1)]],
-      nombre:  ['', [Validators.required, Validators.minLength(1)]],  
+      nombre:  ['', [Validators.required, Validators.minLength(5)]],  
       correo:  ['', Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')],
       estado:  ['', [Validators.required, Validators.minLength(1)]],
       idCargo:  ['', [Validators.required, Validators.minLength(1)]],
-      idContraseña:  ['', [Validators.required, Validators.minLength(1)]],
-      Descripcion: ['', [Validators.required, Validators.minLength(1)]],
+      idContraseña:  ['', [Validators.required, Validators.minLength(8)]],
+      Descripcion: ['', [Validators.required, Validators.minLength(5)]],
       
     });
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
@@ -88,7 +87,6 @@ export class PersonalComponent implements OnInit {
     }
 // funcion para agregar personal
     const personal = new Personal(
-    this.f.idPersonal.value,
     this.f.nombre.value,
     this.f.correo.value,
     this.f.estado.value,
@@ -96,9 +94,10 @@ export class PersonalComponent implements OnInit {
     this.f.idContraseña.value,
     this.f.Descripcion.value)
     console.log("personal", personal)
+
     this.api.Personal(personal).subscribe(
-      idPersonal =>  {
-            this.storage.create('_personal',idPersonal);
+      nombre =>  {
+            this.storage.create('_nombre',nombre);
             this.router.navigate([this.returnUrl]);
         }, ({error}) => { 
             if (error){
@@ -112,6 +111,76 @@ export class PersonalComponent implements OnInit {
             }
           }      
     )
+
+    this.api.Usuario(personal).subscribe(
+      nombre =>  {
+            this.storage.create('_nombre',nombre);
+            this.router.navigate([this.returnUrl]);
+        }, ({error}) => { 
+            if (error){
+              this.hasError = true;
+              this.errorMessage = error.error;
+              console.log(error);
+              setTimeout(() => {
+                this.hasError = false;
+                this.errorMessage = '';
+              }, 3000);
+            }
+          }      
+    )
+    this.api.contraseña(personal).subscribe(
+      nombre =>  {
+            this.storage.create('_nombre',nombre);
+            this.router.navigate([this.returnUrl]);
+        }, ({error}) => { 
+            if (error){
+              this.hasError = true;
+              this.errorMessage = error.error;
+              console.log(error);
+              setTimeout(() => {
+                this.hasError = false;
+                this.errorMessage = '';
+              }, 3000);
+            }
+          }      
+    )
+    this.api.rol(personal).subscribe(
+      nombre =>  {
+            this.storage.create('_nombre',nombre);
+            this.router.navigate([this.returnUrl]);
+        }, ({error}) => { 
+            if (error){
+              this.hasError = true;
+              this.errorMessage = error.error;
+              console.log(error);
+              setTimeout(() => {
+                this.hasError = false;
+                this.errorMessage = '';
+              }, 3000);
+            }
+          }      
+    )
+
+    this.api.permisos(personal).subscribe(
+      nombre =>  {
+            this.storage.create('_nombre',nombre);
+            this.router.navigate([this.returnUrl]);
+        }, ({error}) => { 
+            if (error){
+              this.hasError = true;
+              this.errorMessage = error.error;
+              console.log(error);
+              setTimeout(() => {
+                this.hasError = false;
+                this.errorMessage = '';
+              }, 3000);
+            }
+          }      
+    )
+
 }
+
+
+
 
 }
