@@ -49,7 +49,7 @@
             <div class="form-inline my-2 my-lg-0">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" [routerLink]="['/InformacionPerfil']">Usuario: Admin</a>
+                        <a class="nav-link" [routerLink]="['/InformacionPerfil']">Usuario: {{ user?.correo }}</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" [routerLink]="['']">Cerrar sesión</a>
@@ -59,44 +59,11 @@
         </div>
     </nav>
 </header>
-<div class="row justify-content-center" *ngIf="mostrarLista">
-    <div class="col-12 padre">
-        <div class="cuadro">
-            <label> Perfil</label>
-        </div>
-    </div>
-    <div class="col-12" style="margin-top: 10px;">
-        <table class="table table-striped">
-            <thead>
-                <tr style="text-align: center;">
-                    <th scope="col">#</th>
-                    <th scope="col" sortable="name">Nombre</th>
-                    <th scope="col" sortable="population">Correo</th>
-                    <th scope="col" sortable="population">Estado</th>
-                    <th scope="col" sortable="population">Cargo</th>
-                    <th scope="col" sortable="population">Rol</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>1</th>
-                    <td>
-                        Cristian Camilo
-                    </td>
-                    <td>
-                        ccbr_31@hotmail.com
-                    </td>
-                    <td>
-                        Activo
-                    </td>
-                    <td>
-                        Desarrollador Full Stack (Angular/NodeJs)
-                    </td>
-                    <td>
-                        Estudiante
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="card">
+    <img src="../../assets/Logo.jpeg" alt="John" style="width:100%">
+    <h1>Cristian Bolivar</h1>
+    <p class="title">Ingeniero de Sistemas</p>
+    <p>Universidad el bosque</p>
 </div>

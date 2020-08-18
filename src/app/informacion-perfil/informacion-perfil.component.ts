@@ -10,12 +10,14 @@ export class InformacionPerfilComponent implements OnInit {
 
   public mostrarNuevo: boolean;
   public mostrarLista: boolean;
+  user: any = undefined;
   constructor() {
     this.mostrarNuevo = false;
     this.mostrarLista = true;
   }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('_user'));
   }
   mostrar(seleccionado: any) {
     if (seleccionado === 'N') {
