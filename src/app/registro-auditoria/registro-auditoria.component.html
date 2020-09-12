@@ -59,6 +59,114 @@
         </div>
     </nav>
 </header>
-<p>
-    registro-auditoria works!
-</p>
+<div style="margin:50px; ">
+    <div class="row justify-content-center" style="background-color: #333333; color: white; font-size: small; border-radius: 10px;">
+        <div class="col-6" style="text-align: center; border-style: solid; border-color: transparent #ffff transparent transparent;" (click)="mostrar('L')">
+            <label style="padding: 5px;">Recolección</label>
+        </div>
+        <div class="col-6" style="text-align: center; justify-self: center;" (click)="mostrar('N')">
+            <label style="padding: 8px;">Nuevo</label>
+        </div>
+    </div>
+
+    <form [formGroup]="RegistroForm">
+        <div class="row justify-content-center" *ngIf="mostrarNuevo">
+            <div class="col-12 padre">
+                <div class="cuadro">
+                    <label> Crear nuevo</label>
+                </div>
+            </div>
+            <div class="col-12" style="margin-top: 10px;">
+                <div>
+                    <input type="text" placeholder="Codigo recolección" formControlName="Codigo recolección" class="form-control input-tex">
+                    <div>
+                        <small class="alert alert-danger mt-4" role="alert">El codigo es un campo obligatorio</small>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" placeholder="Correo Funcionario" formControlName="Correo Funcionario" class="form-control input-tex">
+                    <div>
+                        <small class="alert alert-danger mt-4" role="alert">Nombre es un campo obligatorio</small>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <select class="form-control input-tex" formControlName="Material">
+                        <option disabled selected value= "" >Seleccionar Material</option>
+                        <option value="Activo">Vidrio</option>
+                        <option value="Inactivo">Aluminio</option>
+                        <option value="Inactivo">Papel y Carton</option>
+                        <option value="Inactivo">Cobre</option>
+                        <option value="Inactivo">Plástico</option>
+                        <option value="Inactivo">Orgánico</option>
+                    </select>
+                </div>
+                <div style="margin-top: 10px;">
+                    <select class="form-control input-tex" formControlName="idCargo">
+                        <option disabled selected value= "" >Seleccionar Cargo</option>
+                        <option value="1">Funcionario</option>
+                        <option value="2">Funcionario Planta</option>
+                        <option value="3">Administrador</option>
+                        <option value="4">Gerente</option>
+                    </select>
+                </div>
+                <div style="margin-top: 10px;">
+                    <input type="password" placeholder="Contraseña" class="form-control input-tex" formControlName="idContraseña">
+                </div>
+                <div style="margin-top: 10px;">
+                    <select class="form-control input-tex" formControlName="UnidadMedida">
+                        <option disabled selected value= "" >Seleccionar Unidad de Medida</option>
+                        <option value="Cantidad">Cantidad</option>
+                        <option value="Kg">Kg</option>
+                        <option value="g">g</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-top: 10px;">
+                <div class="col-6 ">
+                    <button class="btn btn-danger">Cancelar</button>
+                </div>
+                <div class="col-6 ">
+                    <button class="btn btn-success">Guardar</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <div class="row justify-content-center" *ngIf="mostrarLista">
+        <div class="col-12 padre">
+            <div class="cuadro">
+                <label> Consulta los procesos en gestion</label>
+            </div>
+        </div>
+        <div class="col-12" style="margin-top: 10px;">
+            <table class="table table-striped">
+                <thead>
+                    <tr style="text-align: center;">
+                        <th scope="col">Codigo de Recolección</th>
+                        <th scope="col" sortable="name">Correo Funcionario</th>
+                        <th scope="col" sortable="population">Material</th>
+                        <th scope="col" sortable="population">Unidad de Medida</th>
+                        <th scope="col" sortable="population">Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let persona of personas; let i = index">
+                        <th style="text-align: center;">{{ i +1 }}</th>
+                        <td style="text-align: center;">
+                            Funcionario1@gmail.com
+                        </td>
+                        <td style="text-align: center;">
+                            Carton
+                        </td>
+                        <td style="text-align: center;">
+                            Kilos
+                        </td>
+                        <td style="text-align: center;">
+                            3
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

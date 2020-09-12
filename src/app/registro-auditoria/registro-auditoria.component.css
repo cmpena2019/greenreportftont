@@ -1,0 +1,24 @@
+.botones {
+    color: rgb(255, 255, 255);
+    background-color: #323433;
+    text-align: center;
+    height: 50px;
+    padding: 0px;
+}
+
+.cuadro {
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #33b5e6;
+    color: #ffff;
+    padding: 5px;
+    font-size: x-large;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .cuadro {
+        font-size: medium;
+    }
+}
