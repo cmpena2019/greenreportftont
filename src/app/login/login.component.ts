@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
   hasError: boolean;
   errorMessage: string;
+  visualizarPas: string;
+  nomIco: string;
   constructor(
       private formBuilder: FormBuilder,
       private route: ActivatedRoute,
@@ -24,7 +26,8 @@ export class LoginComponent implements OnInit {
       private api:LoginService,
       private storage: StorageService
   ) {
-
+this.visualizarPas = 'password';
+this.nomIco="fa fa-eye";
   }
   ngOnInit() {
       this.loginForm = this.formBuilder.group({
@@ -62,5 +65,15 @@ export class LoginComponent implements OnInit {
   onSubmit() {
       this.router.navigate([this.returnUrl]);
   }
+visualizacioncontr(){
+  if( this.visualizarPas === 'password'){
+    this.visualizarPas = 'text';
+    this.nomIco = 'fa fa-eye-slash';
+  } else{
+    this.visualizarPas = 'password';
+    this.nomIco = 'fa fa-eye';
+  }
+  
 
+}
 }

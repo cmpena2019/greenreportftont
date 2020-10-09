@@ -8,20 +8,25 @@
                         <div class="col-lg-12">
                             <div class="p-5 card">
                                 <div class="text-center">
-                                    <img src="../../assets/Logo.jpeg" class="imagen">
+                                    <img src="../../assets/Logo4.png" class="imagenLogo">
+
                                     <h1 class="h4 text-gray-900 mb-4" style="font-weight: bold;">Bienvenido!</h1>
                                 </div>
                                 <form [formGroup]="loginForm" (ngSubmit)="login()">
                                     <div class="input-container">
                                         <i class="fa fa-user icon"></i>
-                                        <input type="text" formControlName="username" class="inputext form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Ingrese su Usario" />
+                                        <input type="text" formControlName="username" class="inputext form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Ingrese su usuario" />
                                         <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                                             <div *ngIf="f.username.errors.required">Username is required</div>
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <i class="fa fa-key icon"></i>
-                                        <input type="password" formControlName="password" class="inputext form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Ingrese su Contraseña" />
+                                        <div class="inner-addon left-addon">
+                                            <i class="fa fa-key icon"></i>
+                                            <input [type]=[visualizarPas] formControlName="password" class="inputext form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Ingrese su contraseña" />
+                                            <i [class]="nomIco" (click)="visualizacioncontr()"></i>
+                                        </div>
+
                                         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                                             <div *ngIf="f.password.errors.required">Contraseña es requerida</div>
                                         </div>
