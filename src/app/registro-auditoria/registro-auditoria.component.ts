@@ -34,7 +34,7 @@ export class RegistroAuditoriaComponent implements OnInit {
    }
 
   ngOnInit() {
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
 
     this.user = JSON.parse(localStorage.getItem('_user'));
 
